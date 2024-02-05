@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('git clone') {
             steps {
-            git credentialsId: 'git', url: 'https://github.com/saivanapalli29/game.git'
+                git credentialsId: 'git', url: 'https://github.com/saivanapalli29/game.git'
             }
         }
         stage ('Compile Stage') {
