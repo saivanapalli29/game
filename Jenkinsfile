@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage ('git clone') {
+            steps {
+            git credentialsId: 'git', url: 'https://github.com/saivanapalli29/game.git'
+            }
+        }
         stage ('Compile Stage') {
 
             steps {
