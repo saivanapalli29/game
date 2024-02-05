@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     stages {
         stage ('git clone') {
             steps {
@@ -22,6 +21,12 @@ pipeline {
                 withMaven(maven : 'maven_3_5_0') {
                     sh 'mvn test'
                 
+            }
+        }
+        stage ('clean package') {
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn clean package'
             }
         }
 
